@@ -3,6 +3,7 @@ using System.Collections;
 
 public class GameOver : MonoBehaviour {
 
+    public AudioClip deathSound;
     private GameMaster gm;
 
     // Use this for initialization
@@ -21,6 +22,7 @@ public class GameOver : MonoBehaviour {
 
     private void EndGame()
     {
+        gm.aSource.PlayOneShot(deathSound);
         Time.timeScale = 0;
         gm.GameOverPanel();
     }

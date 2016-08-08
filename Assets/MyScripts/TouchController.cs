@@ -26,7 +26,7 @@ public class TouchController : MonoBehaviour {
         if(Input.touchCount > 0)
         {
             t = Input.GetTouch(0);
-            if(t.phase == TouchPhase.Ended)
+            if(t.phase == TouchPhase.Began)
             {
                 Jump();
             }
@@ -36,14 +36,14 @@ public class TouchController : MonoBehaviour {
 
     void DetectMouse()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            //Debug.Log("Mouse Button Down Pressed");
+            Jump();
         }
 
         if (Input.GetMouseButtonUp(0))
         {
-            Jump();
+            
             //Debug.Log("Mouse Button Released");
         }
     }
